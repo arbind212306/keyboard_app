@@ -1,0 +1,40 @@
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    grid-gap: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.key {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.take-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #2196f3;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f2f2f2;
+    align-items: center;
+    padding: 20px;
+}
