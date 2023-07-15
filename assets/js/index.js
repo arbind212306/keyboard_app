@@ -142,16 +142,13 @@ const releaseControlKey = () => {
 
 const controlKey = (id) => {
     const user_id = getParameterByName('user');
-    // let gridColor = $('#'+id).css('background-color');
-    // console.log(gridColor);
+    let gridColor = $('#'+id).val();
     let color = user_id == 1 ? 'red' : 'yellow';
     const controlValue = $('#hidden').val();
     if (controlValue == 1) {
-
-        // console.log(color);
-        // const gridColor = setColor == "red" || setColor == "yellow" ? color : "white";
-        // console.log(color);
+        color = gridColor == 'red' || gridColor == 'yellow' ? 'white' : color;
         $('#'+id).css('background-color', color);
+        $('#'+id).val(color);
 
         $.ajax({
             type: 'POST',
@@ -171,7 +168,7 @@ const createHtmlElementForGrid = () => {
         let div = document.createElement('div');
         div.className = `key`;
         div.setAttribute('id', `key_${item.id}` );
-        // div.setAttribute('onCLick', `controlKey(this.id)`);
+        div.setAttribute('value', `white`);
         div.textContent = item.name;
         document.getElementById("keyboard").appendChild(div);
     })
